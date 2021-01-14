@@ -79,7 +79,6 @@ public ink::GameEngine
 		private:
 		bool RightBHeld, LeftBHeld;
 		bool RightBPressed, LeftBPressed;
-		bool RightBReleased, LeftBReleased;
 	} Command;
 	
 	struct MovingRect:
@@ -87,9 +86,7 @@ public ink::GameEngine
 	{
 		ink::Rect<int> rect{0, 500, 100, 100};
 		void Draw(ObjectManager* parent, GameEngine* _engine) const override
-		{
-			_engine->SetDrawColor(DEFAULT::Green); _engine->DrawRect(rect, true);
-		}
+		{ _engine->SetDrawColor(DEFAULT::Green); _engine->DrawRect(rect, true); }
 		
 		void Update(ObjectManager* parent, GameEngine* _engine) override
 		{
